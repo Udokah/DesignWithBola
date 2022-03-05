@@ -1,23 +1,25 @@
 import "./App.css";
+import Header from "Header";
+import stylex from "@ladifire-opensource/stylex";
+import SideNavigation from "SideNavigation";
+import MainContent from "MainContent";
 
-function App() {
+const styles = stylex.create({
+  content: {
+    boxSizing: "border-box",
+    height: "calc(100vh - var(--header-height))",
+    display: "flex",
+  },
+});
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <section className={stylex(styles.content)}>
+        <SideNavigation />
+        <MainContent />
+      </section>
     </div>
   );
 }
-
-export default App;
