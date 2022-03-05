@@ -40,17 +40,20 @@ export default function Header() {
         <li>
           <a
             href="https://www.linkedin.com/in/bolanle-akinyemi-6b6b37220/"
+            target="_blank"
             className={stylex(styles.link)}
           >
             <FontAwesomeIcon size="xl" icon={faLinkedin} />
           </a>
           <a
+            target="_blank"
             href="https://www.instagram.com/designwithbola/"
             className={stylex(styles.link)}
           >
             <FontAwesomeIcon size="xl" icon={faInstagram} />
           </a>
           <a
+            target="_blank"
             href="mailto:bola.akinyemi@hotmail.com"
             className={stylex(styles.link)}
           >
