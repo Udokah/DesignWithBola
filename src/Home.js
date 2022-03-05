@@ -10,11 +10,10 @@ const styles = stylex.create({
     width: "100%",
     maxWidth: 700,
     color: "var(--dark-text)",
-    paddingTop: 44,
+    paddingTop: 40,
     paddingBottom: 44,
     paddingRight: 40,
     paddingLeft: 40,
-    lineHeight: 1.5,
   },
   first: {
     fontWeight: 500,
@@ -23,6 +22,7 @@ const styles = stylex.create({
   },
   second: {
     fontSize: 50,
+    lineHeight: 1.4,
   },
   highlight: {
     wordWrap: "nowwrap",
