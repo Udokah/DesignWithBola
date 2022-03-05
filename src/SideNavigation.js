@@ -31,7 +31,7 @@ const styles = stylex.create({
     borderColor: "transparent",
     height: 32,
     ":hover": {
-      borderColor: "#18a0fb",
+      borderColor: "var(--accent)",
       cursor: "pointer",
     },
   },
@@ -57,7 +57,7 @@ export default function SideNavigation() {
             <a className={stylex(styles.link)}>
               <CaretRightIcon />
               <HashIcon className={stylex(styles.hashIcon)} />
-              About Me
+              Home
             </a>
           </li>
           <li className={stylex(styles.resetList)}>
@@ -65,6 +65,13 @@ export default function SideNavigation() {
               <CaretRightIcon />
               <HashIcon className={stylex(styles.hashIcon)} />
               My Work
+            </a>
+          </li>
+          <li className={stylex(styles.resetList)}>
+            <a className={stylex(styles.link)}>
+              <CaretRightIcon />
+              <HashIcon className={stylex(styles.hashIcon)} />
+              UI Designs
             </a>
           </li>
           <li className={stylex(styles.resetList)}>

@@ -1,4 +1,5 @@
 import stylex from "@ladifire-opensource/stylex";
+import Home from "Home";
 
 const styles = stylex.create({
   root: {
@@ -10,5 +11,9 @@ const styles = stylex.create({
 });
 
 export default function MainContent() {
-  return <div className={stylex(styles.root)}>MainContent</div>;
+  return (
+    <div className={stylex(styles.root)}>
+      <Home />
+    </div>
+  );
 }
