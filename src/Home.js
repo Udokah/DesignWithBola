@@ -2,14 +2,16 @@ import stylex from "@ladifire-opensource/stylex";
 
 const styles = stylex.create({
   root: {
-    display: "flex",
-    justifyContent: "space-around",
     paddingBottom: 50,
+    textAlign: "center",
+    color: "var(--dark-text)",
   },
-  card: {
+  introduction: {
+    display: "inline-block",
+    textAlign: "left",
     width: "100%",
     maxWidth: 700,
-    color: "var(--dark-text)",
+
     paddingTop: 40,
     paddingBottom: 44,
     paddingRight: 40,
@@ -36,7 +38,7 @@ const styles = stylex.create({
 export default function Home() {
   return (
     <div className={stylex(styles.root)}>
-      <div className={stylex(styles.card)}>
+      <div className={stylex(styles.introduction)}>
         <span className={stylex(styles.first)}> Hi!</span>
         <span className={stylex(styles.second)}>
           My name is Bola and I am a{" "}
@@ -44,6 +46,7 @@ export default function Home() {
           based in London, UK.
         </span>
       </div>
+      <div>My design process</div>
     </div>
   );
 }
