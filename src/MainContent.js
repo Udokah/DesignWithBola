@@ -1,5 +1,5 @@
 import stylex from "@ladifire-opensource/stylex";
-import Home from "Home";
+import Home from "home/Home";
 
 const styles = stylex.create({
   root: {
