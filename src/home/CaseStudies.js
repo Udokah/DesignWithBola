@@ -77,7 +77,7 @@ export default function CaseStudies() {
         />
         <CaseStudyCard
           rightToLeft={true}
-          title="Rebellious Fashion"
+          title="Reconnect"
           subTitle="UX Design"
           description="Solved user's pain points by redesigning Rebellious Fashion across desktop and mobile to ensure a compelling user journey."
         />
