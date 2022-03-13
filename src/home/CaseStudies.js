@@ -1,4 +1,5 @@
 import stylex from "@ladifire-opensource/stylex";
+import rebelliousRecording from "videos/rebellious.webm";
 
 const styles = stylex.create({
   caseStudies: {
@@ -23,7 +24,7 @@ const styles = stylex.create({
   video: {
     width: 480,
     height: 420,
-    backgroundColor: "black",
+    backgroundColor: "transparent",
   },
   contentContainer: {
     display: "flex",
@@ -71,6 +72,7 @@ export default function CaseStudies() {
       <h1>Case Studies</h1>
       <div className={stylex(styles.caseStudiesWrapper)}>
         <CaseStudyCard
+          videoSrc={rebelliousRecording}
           title="Rebellious Fashion"
           subTitle="UX Design"
           description="Solved user's pain points by redesigning Rebellious Fashion across desktop and mobile to ensure a compelling user journey."
@@ -96,7 +98,13 @@ function CaseStudyCard({
 }) {
   return (
     <div className={stylex(styles.card, rightToLeft && styles.rightToLeft)}>
-      <video className={stylex(styles.video)}>
+      <video
+        muted={true}
+        loop={true}
+        className={stylex(styles.video)}
+        controls
+        autoPlay={true}
+      >
         <source src={videoSrc} type="video/webm" />
       </video>
       <div className={stylex(styles.divider)} />
