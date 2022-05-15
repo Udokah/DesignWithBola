@@ -3,6 +3,7 @@ import Header from "Header";
 import stylex from "@ladifire-opensource/stylex";
 import SideNavigation from "SideNavigation";
 import MainContent from "MainContent";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const styles = stylex.create({
   content: {
@@ -17,8 +18,10 @@ export default function App() {
     <div>
       <Header />
       <section className={stylex(styles.content)}>
-        <SideNavigation />
-        <MainContent />
+        <Router>
+          <SideNavigation />
+          <MainContent />
+        </Router>
       </section>
     </div>
   );

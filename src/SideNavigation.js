@@ -2,6 +2,7 @@ import stylex from "@ladifire-opensource/stylex";
 import HashIcon from "icons/HashIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const styles = stylex.create({
   sideNav: {
@@ -18,6 +19,7 @@ const styles = stylex.create({
     padding: 0,
   },
   link: {
+    textDecoration: "none",
     paddingLeft: 2,
     color: "var(--dark-text)",
     fontWeight: 600,
@@ -54,32 +56,32 @@ export default function SideNavigation() {
       <nav className={stylex(styles.resetList, styles.nav)}>
         <ol className={stylex(styles.resetList)}>
           <li className={stylex(styles.resetList)}>
-            <a className={stylex(styles.link)}>
+            <Link to="/" className={stylex(styles.link)}>
               <CaretRightIcon />
               <HashIcon className={stylex(styles.hashIcon)} />
               Home
-            </a>
+            </Link>
           </li>
           <li className={stylex(styles.resetList)}>
-            <a className={stylex(styles.link)}>
+            <Link to="/work" className={stylex(styles.link)}>
               <CaretRightIcon />
               <HashIcon className={stylex(styles.hashIcon)} />
               My Work
-            </a>
+            </Link>
           </li>
           <li className={stylex(styles.resetList)}>
-            <a className={stylex(styles.link)}>
+            <Link to="/designs" className={stylex(styles.link)}>
               <CaretRightIcon />
               <HashIcon className={stylex(styles.hashIcon)} />
               UI Designs
-            </a>
+            </Link>
           </li>
           <li className={stylex(styles.resetList)}>
-            <a className={stylex(styles.link)}>
+            <Link to="/contact" className={stylex(styles.link)}>
               <CaretRightIcon />
               <HashIcon className={stylex(styles.hashIcon)} />
               Contact Me
-            </a>
+            </Link>
           </li>
         </ol>
       </nav>
