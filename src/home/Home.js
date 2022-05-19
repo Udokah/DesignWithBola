@@ -13,7 +13,6 @@ const styles = stylex.create({
   introduction: {
     display: "inline-block",
     textAlign: "center",
-    width: "80%",
     minHeight: "75vh",
     marginTop: 40,
     paddingTop: 150,
@@ -22,6 +21,9 @@ const styles = stylex.create({
     paddingLeft: 40,
     backgroundColor: "var(--white)",
     border: "2px solid var(--accent)",
+    "@media (min-width: 576px)": {
+      width: "80%",
+    },
   },
   first: {
     fontFamily: "var(--font-serif)",
@@ -41,6 +43,8 @@ const styles = stylex.create({
   },
   scrollDownButton: {
     position: "absolute",
+    left: 0,
+    right: 0,
     color: "var(--dark-text)",
     animation: "bounce 3s infinite",
     cursor: "pointer",

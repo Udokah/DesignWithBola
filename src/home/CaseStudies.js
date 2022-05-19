@@ -16,6 +16,14 @@ const styles = stylex.create({
     marginBottom: 70,
     justifyContent: "space-between",
     textAlign: "left",
+    "@media (max-width: 767.98px)": {
+      flexDirection: "column !important",
+      justifyContent: "center",
+      alignItems: "center",
+      textAlign: "left !important",
+      gap: "1rem",
+      maxWidth: 500,
+    },
   },
   rightToLeft: {
     flexDirection: "row-reverse",
@@ -23,6 +31,7 @@ const styles = stylex.create({
   },
   video: {
     width: 480,
+    maxWidth: "100%",
     height: 420,
     backgroundColor: "transparent",
     pointerEvents: "none",

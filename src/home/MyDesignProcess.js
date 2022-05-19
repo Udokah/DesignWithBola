@@ -12,7 +12,9 @@ const styles = stylex.create({
   },
   processCardWrapper: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    gap: 30,
     width: "100%",
     maxWidth: 900,
     marginTop: 10,
@@ -34,7 +36,7 @@ const styles = stylex.create({
     boxSizing: "border-box",
     backgroundColor: "white",
     color: "var(--accent)",
-    boxShadow: "0 10px 30px rgb(0, 0, 0, .1)",
+    boxShadow: "var(--shadow)",
   },
   front: {
     justifyContent: "space-around",

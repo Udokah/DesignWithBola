@@ -12,6 +12,7 @@ const styles = stylex.create({
     overflowX: "hidden",
     overflowY: "scroll",
     scrollBehavior: "smooth",
+    padding: 20,
   },
 });
 

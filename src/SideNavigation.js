@@ -3,16 +3,44 @@ import HashIcon from "icons/HashIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 const styles = stylex.create({
   sideNav: {
-    width: 240,
+    width: "var(--side-nav-width)",
     flexShrink: 0,
     boxSizing: "border-box",
     paddingTop: 40,
     backgroundColor: "var(--sidebar-background)",
     ":hover .caretRightIcon": {
       visibility: "visible",
+    },
+    "@media (max-width: 991.98px)": {
+      position: "absolute",
+      left: "calc(0px - var(--side-nav-width))",
+      minHeight: "calc(100% - var(--header-height))",
+      boxShadow: "var(--shadow)",
+      transition: ".5s",
+      zIndex: 1,
+    },
+  },
+  menu: {
+    position: "absolute",
+    left: "calc(10px + var(--side-nav-width))",
+    top: 10,
+    backgroundColor: "rgba(255, 255, 255, .5)",
+    width: 40,
+    height: 40,
+    display: "none",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: "50%",
+    border: 0,
+    lineHeight: "100%",
+    boxShadow: "var(--shadow)",
+    cursor: "pointer",
+    "@media(max-width: 991.98px)": {
+      display: "flex",
     },
   },
   resetList: {
@@ -52,8 +80,24 @@ const styles = stylex.create({
 });
 
 export default function SideNavigation() {
+  const sideNav = useRef(null);
+  let isSideNavVisible = false;
+
+  const toggleSideNav = () => {
+    if (isSideNavVisible) {
+      sideNav.current.style.left = "calc(0px - var(--side-nav-width))";
+    } else {
+      sideNav.current.style.left = "0";
+    }
+
+    isSideNavVisible = !isSideNavVisible;
+  };
+
   return (
-    <div id="side-nav" className={stylex(styles.sideNav)}>
+    <div ref={sideNav} id="side-nav" className={stylex(styles.sideNav)}>
+      <button className={stylex(styles.menu)} aria-label="Menu" onClick={toggleSideNav}>
+        <HashIcon className={stylex(styles.hashIcon)} />
+      </button>
       <nav className={stylex(styles.resetList, styles.nav)}>
         <ol className={stylex(styles.resetList)}>
           <li className={stylex(styles.resetList)}>

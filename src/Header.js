@@ -19,6 +19,9 @@ const styles = stylex.create({
   title: {
     fontWeight: 600,
     flex: 1,
+    "@media (max-width: 575.98px)": {
+      display: "none",
+    },
   },
   logoWrap: {
     flex: 1,

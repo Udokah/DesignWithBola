@@ -4,11 +4,13 @@ html {
   --header-background: #2c2c2c;
   --white: #fff;
   --header-height: 48px;
+  --side-nav-width: 240px;
   --content-background: #e5e5e5;
   --sidebar-background: rgba(255, 255, 255, 1);
   --dark-text: rgb(51, 51, 51);
   --accent: #18a0fb;
   --font-serif: 'Cormorant Upright', serif;
+  --shadow: 0 10px 30px rgb(0, 0, 0, .1);
 }
 
 body {
