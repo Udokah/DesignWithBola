@@ -8,6 +8,7 @@ html {
   --sidebar-background: rgba(255, 255, 255, 1);
   --dark-text: rgb(51, 51, 51);
   --accent: #18a0fb;
+  --font-serif: 'Cormorant Upright', serif;
 }
 
 body {
@@ -85,4 +86,22 @@ div[data-process-card]:hover [data-process-card-content] {
     -webkit-transform: translateY(-15px);
     transform: translateY(-15px);
   }
+}
+
+.main-heading {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.main-heading::after {
+  content: '';
+  background-color: var(--accent);
+  width: 70px;
+  height: 3px;
+  border-radius: 5px;
+  position: absolute;
+  top: 130%;
+  left: 0;
+  right: 0;
+  margin: auto;
 }

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const styles = stylex.create({
   sideNav: {
     width: 240,
+    flexShrink: 0,
     boxSizing: "border-box",
     paddingTop: 40,
     backgroundColor: "var(--sidebar-background)",

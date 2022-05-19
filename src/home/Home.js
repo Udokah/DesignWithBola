@@ -13,8 +13,8 @@ const styles = stylex.create({
   introduction: {
     display: "inline-block",
     textAlign: "center",
-    width: "100%",
-    maxWidth: 900,
+    width: "80%",
+    minHeight: "75vh",
     marginTop: 40,
     paddingTop: 150,
     paddingBottom: 150,
@@ -24,18 +24,18 @@ const styles = stylex.create({
     border: "2px solid var(--accent)",
   },
   first: {
-    fontWeight: 500,
+    fontFamily: "var(--font-serif)",
+    fontWeight: 700,
     fontSize: 55,
     display: "block",
+    marginBottom: "1rem",
   },
   second: {
-    fontSize: 50,
+    fontSize: 32,
     lineHeight: 1.4,
   },
   highlight: {
-    wordWrap: "nowwrap",
     backgroundColor: "var(--accent)",
-    whiteSpace: "nowrap",
     color: "var(--white)",
     fontWeight: 500,
   },
@@ -54,18 +54,18 @@ const styles = stylex.create({
 export default function Home() {
   return (
     <div className={stylex(styles.root)}>
-      <div className={stylex(styles.introduction)}>
-        <span className={stylex(styles.first)}> Hi!</span>
+      <p className={stylex(styles.introduction)}>
+        <span className={stylex(styles.first)}>Hi! 👋🏾</span>
         <span className={stylex(styles.second)}>
-          My name is Bola and I am a{" "}
+          My name is Bola.<br />I am a{" "}
           <span className={stylex(styles.highlight)}>Product Designer</span>{" "}
           based in London, UK.
         </span>
-      </div>
+      </p>
       <div className={stylex(styles.scrollDownWrapper)}>
-        <a className={stylex(styles.scrollDownButton)}>
+        <span className={stylex(styles.scrollDownButton)}>
           <FontAwesomeIcon size="3x" icon={faChevronDown} />
-        </a>
+        </span>
       </div>
       <MyDesignProcess />
       <CaseStudies />

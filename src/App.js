@@ -15,14 +15,12 @@ const styles = stylex.create({
 
 export default function App() {
   return (
-    <div>
+    <Router>
       <Header />
       <section className={stylex(styles.content)}>
-        <Router>
-          <SideNavigation />
-          <MainContent />
-        </Router>
+        <SideNavigation />
+        <MainContent />
       </section>
-    </div>
+    </Router>
   );
 }

@@ -25,6 +25,7 @@ const styles = stylex.create({
     width: 480,
     height: 420,
     backgroundColor: "transparent",
+    pointerEvents: "none",
   },
   contentContainer: {
     display: "flex",
@@ -41,7 +42,8 @@ const styles = stylex.create({
   title: {
     fontSize: "1.7em",
     color: "var(--dark-text)",
-    fontWeight: 500,
+    fontFamily: "var(--font-serif)",
+    fontWeight: 700,
     ":hover": {
       textDecoration: "underline",
       cursor: "pointer",
@@ -60,8 +62,11 @@ const styles = stylex.create({
     marginTop: 20,
     backgroundColor: "var(--accent)",
     color: "var(--white)",
-    padding: 7,
-    borderRadius: 6,
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingRight: 15,
+    paddingLeft: 15,
+    borderRadius: 20,
     cursor: "pointer",
   },
 });
@@ -69,7 +74,7 @@ const styles = stylex.create({
 export default function CaseStudies() {
   return (
     <div className={stylex(styles.caseStudies)}>
-      <h1>Case Studies</h1>
+      <h1 className="main-heading">Case Studies</h1>
       <div className={stylex(styles.caseStudiesWrapper)}>
         <CaseStudyCard
           videoSrc={rebelliousRecording}

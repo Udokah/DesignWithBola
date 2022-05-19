@@ -1,11 +1,4 @@
 import stylex from "@ladifire-opensource/stylex";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChalkboardTeacher,
-  faPenToSquare,
-  faObjectUngroup,
-  faHandHoldingHeart,
-} from "@fortawesome/free-solid-svg-icons";
 
 const styles = stylex.create({
   process: {
@@ -39,7 +32,9 @@ const styles = stylex.create({
     width: "100%",
     height: "100%",
     boxSizing: "border-box",
-    borderRadius: 6,
+    backgroundColor: "white",
+    color: "var(--accent)",
+    boxShadow: "0 10px 30px rgb(0, 0, 0, .1)",
   },
   front: {
     justifyContent: "space-around",
@@ -55,6 +50,7 @@ const styles = stylex.create({
     justifyContent: "space-around",
     alignItems: "center",
     overflow: "hidden",
+    border: "1px solid var(--accent)",
   },
   frontAndBack: {
     display: "flex",
@@ -65,39 +61,42 @@ const styles = stylex.create({
     height: "100%",
     boxSizing: "border-box",
   },
+  icon: {
+    fontSize: "4rem",
+  },
 });
 
 export default function MyDesignProcess() {
   return (
     <div className={stylex(styles.process)}>
-      <h1>My Design Process</h1>
+      <h1 className="main-heading">My Design Process</h1>
       <div className={stylex(styles.processCardWrapper)}>
         <ProcessCard
-          backgroundColor="#fec62e"
+          backgroundImage="linear-gradient(rgb(254, 198, 46) 50%, rgb(255 152 0))"
           color="#000"
           title="Research"
-          icon={faChalkboardTeacher}
+          icon="🔎"
           description="I start by Identifying, researching and understanding the initial problem at hand."
         />
         <ProcessCard
-          backgroundColor="#ef4f2b"
+          backgroundImage="linear-gradient(rgb(221 102 76) 50%, rgb(202 64 33))"
           color="#fff"
           title="Define"
-          icon={faPenToSquare}
+          icon="✍🏾"
           description="The next step is to define an apparent problem based on user research."
         />
         <ProcessCard
-          backgroundColor="#9650fb"
+          backgroundImage="linear-gradient(rgb(150, 80, 251) 50%, rgb(101 43 185))"
           color="#fff"
           title="Develop"
-          icon={faObjectUngroup}
+          icon="🏗"
           description="I focus on developing solutions to the identified problems by creating a low-fidelity design of the final product."
         />
         <ProcessCard
-          backgroundColor="#27a2f8"
+          backgroundImage="linear-gradient(rgb(39, 162, 248) 50%, rgb(30 127 195))"
           color="#fff"
           title="Deliver"
-          icon={faHandHoldingHeart}
+          icon="♻️"
           description="Deliver and listen; I provide a solution that works and receive feedback on improvements."
         />
       </div>
@@ -105,16 +104,15 @@ export default function MyDesignProcess() {
   );
 }
 
-function ProcessCard({ title, icon, description, backgroundColor, color }) {
+function ProcessCard({ title, icon, description }) {
   return (
     <div className={stylex(styles.processCard)} data-process-card>
       <div
         className={stylex(styles.processCardContent)}
-        style={{ backgroundColor, color }}
         data-process-card-content
       >
         <div className={stylex(styles.front, styles.frontAndBack)}>
-          <FontAwesomeIcon size="3x" icon={icon} />
+          <div className={stylex(styles.icon)}>{icon}</div>
           <div>{title}</div>
         </div>
         <div className={stylex(styles.back, styles.frontAndBack)}>
