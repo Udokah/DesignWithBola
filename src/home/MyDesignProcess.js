@@ -68,7 +68,7 @@ const styles = stylex.create({
 
 export default function MyDesignProcess() {
   return (
-    <div className={stylex(styles.process)}>
+    <div id="design-process" className={stylex(styles.process)}>
       <h1 className="main-heading">My Design Process</h1>
       <div className={stylex(styles.processCardWrapper)}>
         <ProcessCard

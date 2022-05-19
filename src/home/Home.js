@@ -63,9 +63,9 @@ export default function Home() {
         </span>
       </p>
       <div className={stylex(styles.scrollDownWrapper)}>
-        <span className={stylex(styles.scrollDownButton)}>
+        <a href="#design-process" className={stylex(styles.scrollDownButton)}>
           <FontAwesomeIcon size="3x" icon={faChevronDown} />
-        </span>
+        </a>
       </div>
       <MyDesignProcess />
       <CaseStudies />

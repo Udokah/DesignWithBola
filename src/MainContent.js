@@ -11,6 +11,7 @@ const styles = stylex.create({
     flexGrow: 1,
     overflowX: "hidden",
     overflowY: "scroll",
+    scrollBehavior: "smooth",
   },
 });
 
