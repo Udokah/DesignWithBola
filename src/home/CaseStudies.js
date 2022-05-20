@@ -11,6 +11,7 @@ const styles = stylex.create({
   card: {
     display: "inline-flex",
     flexDirection: "row",
+    gap: "3rem",
     width: "100%",
     maxWidth: 900,
     marginBottom: 70,
@@ -21,7 +22,7 @@ const styles = stylex.create({
       justifyContent: "center",
       alignItems: "center",
       textAlign: "left !important",
-      gap: "1rem",
+      gap: "1rem !important",
       maxWidth: 500,
     },
   },
@@ -33,7 +34,7 @@ const styles = stylex.create({
     width: 480,
     maxWidth: "100%",
     height: 420,
-    backgroundColor: "transparent",
+    backgroundColor: "#000",
     pointerEvents: "none",
   },
   contentContainer: {
@@ -44,9 +45,6 @@ const styles = stylex.create({
   content: {
     lineHeight: 1.4,
     display: "inline-block",
-  },
-  divider: {
-    width: 80,
   },
   title: {
     fontSize: "1.7em",
@@ -121,7 +119,6 @@ function CaseStudyCard({
       >
         <source src={videoSrc} type="video/webm" />
       </video>
-      <div className={stylex(styles.divider)} />
       <div className={stylex(styles.contentContainer)}>
         <div className={stylex(styles.content)}>
           <a className={stylex(styles.title)} href={href}>
