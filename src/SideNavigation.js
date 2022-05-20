@@ -18,7 +18,7 @@ const styles = stylex.create({
     "@media (max-width: 991.98px)": {
       position: "absolute",
       left: "calc(0px - var(--side-nav-width))",
-      minHeight: "calc(100% - var(--header-height))",
+      minHeight: "calc(100vh - var(--header-height))",
       boxShadow: "var(--shadow)",
       transition: ".5s",
       zIndex: 1,
