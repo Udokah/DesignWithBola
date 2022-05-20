@@ -74,29 +74,21 @@ export default function MyDesignProcess() {
       <h1 className="main-heading">My Design Process</h1>
       <div className={stylex(styles.processCardWrapper)}>
         <ProcessCard
-          backgroundImage="linear-gradient(rgb(254, 198, 46) 50%, rgb(255 152 0))"
-          color="#000"
           title="Research"
           icon="🔎"
           description="I start by Identifying, researching and understanding the initial problem at hand."
         />
         <ProcessCard
-          backgroundImage="linear-gradient(rgb(221 102 76) 50%, rgb(202 64 33))"
-          color="#fff"
           title="Define"
           icon="✍🏾"
           description="The next step is to define an apparent problem based on user research."
         />
         <ProcessCard
-          backgroundImage="linear-gradient(rgb(150, 80, 251) 50%, rgb(101 43 185))"
-          color="#fff"
           title="Develop"
           icon="🏗"
           description="I focus on developing solutions to the identified problems by creating a low-fidelity design of the final product."
         />
         <ProcessCard
-          backgroundImage="linear-gradient(rgb(39, 162, 248) 50%, rgb(30 127 195))"
-          color="#fff"
           title="Deliver"
           icon="♻️"
           description="Deliver and listen; I provide a solution that works and receive feedback on improvements."
