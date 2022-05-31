@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 const styles = stylex.create({
   root: {
     backgroundColor: "var(--content-background)",
+    color: "var(--dark-text)",
     flexGrow: 1,
     overflowX: "hidden",
     overflowY: "scroll",

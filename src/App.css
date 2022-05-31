@@ -93,6 +93,7 @@ div[data-process-card]:hover [data-process-card-content] {
 .main-heading {
   position: relative;
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 .main-heading::after {
