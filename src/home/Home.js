@@ -67,7 +67,7 @@ export default function Home() {
         </span>
       </p>
       <div className={stylex(styles.scrollDownWrapper)}>
-        <a href="#design-process" className={stylex(styles.scrollDownButton)}>
+        <a href="#design-process" className={stylex(styles.scrollDownButton)} aria-label="Scroll down">
           <FontAwesomeIcon size="3x" icon={faChevronDown} />
         </a>
       </div>
