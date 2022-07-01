@@ -1,4 +1,4 @@
-import projects from "work/projects";
+import projects from "projects/projects";
 import { Link } from "react-router-dom";
 
 export default function Work() {
@@ -7,7 +7,7 @@ export default function Work() {
       Workk page
       <div>
         {projects.map(([, project], index) => (
-          <Link key={index} to={project.path}>
+          <Link key={project.path} to={project.path}>
             {project.name}
           </Link>
         ))}
