@@ -3,7 +3,7 @@ import Header from "Header";
 import stylex from "@ladifire-opensource/stylex";
 import SideNavigation from "SideNavigation";
 import MainContent from "MainContent";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 
 const styles = stylex.create({
   content: {
