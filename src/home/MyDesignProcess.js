@@ -8,7 +8,7 @@ const styles = stylex.create({
     justifyContent: "space-between",
     paddingLeft: 20,
     paddingRight: 20,
-    marginTop: 100,
+    paddingTop: "calc(var(--header-height) * 2)",
   },
   processCardWrapper: {
     display: "flex",

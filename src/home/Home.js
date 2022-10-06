@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import MyDesignProcess from "home/MyDesignProcess";
 import CaseStudies from "home/CaseStudies";
+import { forwardRef } from "react";
 
 const styles = stylex.create({
   root: {
@@ -45,7 +46,9 @@ const styles = stylex.create({
     position: "absolute",
     left: 0,
     right: 0,
+    backgroundColor: "transparent",
     color: "var(--dark-text)",
+    border: 0,
     animation: "bounce 3s infinite",
     cursor: "pointer",
   },
@@ -55,7 +58,7 @@ const styles = stylex.create({
   },
 });
 
-export default function Home() {
+export default forwardRef(function Home({scrollToDesignProcess}, designProcess) {
   return (
     <div className={stylex(styles.root)}>
       <p className={stylex(styles.introduction)}>
@@ -67,12 +70,14 @@ export default function Home() {
         </span>
       </p>
       <div className={stylex(styles.scrollDownWrapper)}>
-        <a href="#design-process" className={stylex(styles.scrollDownButton)} aria-label="Scroll down">
+        <button onClick={scrollToDesignProcess} className={stylex(styles.scrollDownButton)} aria-label="Scroll down">
           <FontAwesomeIcon size="3x" icon={faChevronDown} />
-        </a>
+        </button>
       </div>
-      <MyDesignProcess />
+      <div ref={designProcess}>
+        <MyDesignProcess />
+      </div>
       <CaseStudies />
     </div>
   );
-}
+});
