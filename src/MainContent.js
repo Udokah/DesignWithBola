@@ -5,6 +5,7 @@ import Designs from "designs/Designs";
 import About from "about/About";
 import { Routes, Route } from "react-router-dom";
 import { useRef } from "react";
+import projects from "projects/projects";
 
 const styles = stylex.create({
   root: {
@@ -31,6 +32,14 @@ export default function MainContent() {
       <Routes>
         <Route exact path="/" element={<Home ref={designProcess} scrollToDesignProcess={scrollToDesignProcess} />} />
         <Route exact path="/work" element={<Work />} />
+        {projects.map(([Component, project], index) => (
+          <Route
+            key={project.path}
+            exact
+            path={project.path}
+            element={<Component />}
+          />
+        ))}
         <Route exact path="/designs" element={<Designs />} />
         <Route exact path="/about" element={<About />} />
       </Routes>
