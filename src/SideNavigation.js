@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
-import projects from "projects/projects";
 
 const styles = stylex.create({
   sideNav: {
@@ -48,22 +47,24 @@ const styles = stylex.create({
     margin: 0,
     padding: 0,
   },
-  listItem: {
+  link: {
     textDecoration: "none",
     paddingLeft: 2,
     color: "var(--dark-text)",
     fontWeight: 600,
     fontSize: 13,
     fontFeatureSettings: '"ss02" on,"liga" on,"calt" on',
-    display: "block",
+    display: "flex",
     alignItems: "center",
     borderWidth: 1,
     boxSizing: "border-box",
     borderStyle: "solid",
     borderColor: "transparent",
-    flexDirection: "row",
-    paddingTop: 8,
-    paddingBottom: 8,
+    height: 32,
+    ":hover": {
+      borderColor: "var(--accent)",
+      cursor: "pointer",
+    },
   },
   hashIcon: {
     marginLeft: 12,
@@ -75,21 +76,6 @@ const styles = stylex.create({
   },
   nav: {
     borderTop: "1px solid #e5e5e5",
-  },
-  subNav: {
-    display: "block",
-    marginLeft: 38,
-  },
-  subNavItem: {
-    display: "block",
-    marginTop: 4,
-  },
-  linkItem: {
-    textDecoration: "none",
-    fontSize: "1.3em",
-    ":hover": {
-      color: "var(--accent)",
-    },
   },
 });
 
@@ -109,71 +95,38 @@ export default function SideNavigation() {
 
   return (
     <div ref={sideNav} id="side-nav" className={stylex(styles.sideNav)}>
-      <button
-        className={stylex(styles.menu)}
-        aria-label="Menu"
-        onClick={toggleSideNav}
-      >
+      <button className={stylex(styles.menu)} aria-label="Menu" onClick={toggleSideNav}>
         <HashIcon className={stylex(styles.hashIcon)} />
       </button>
       <nav className={stylex(styles.resetList, styles.nav)}>
         <ol className={stylex(styles.resetList)}>
           <li className={stylex(styles.resetList)}>
-            <div className={stylex(styles.listItem)}>
-              <div>
-                <CaretRightIcon />
-                <HashIcon className={stylex(styles.hashIcon)} />
-                <Link className={stylex(styles.linkItem)} to="/">
-                  Home
-                </Link>
-              </div>
-            </div>
+            <Link to="/" className={stylex(styles.link)}>
+              <CaretRightIcon />
+              <HashIcon className={stylex(styles.hashIcon)} />
+              Home
+            </Link>
           </li>
-
           <li className={stylex(styles.resetList)}>
-            <div className={stylex(styles.listItem)}>
-              <div>
-                <CaretRightIcon />
-                <HashIcon className={stylex(styles.hashIcon)} />
-                <Link className={stylex(styles.linkItem)} to="/work">
-                  My Work
-                </Link>
-              </div>
-              <div className={stylex(styles.subNav)}>
-                {projects.map(([, project]) => (
-                  <Link
-                    className={stylex(styles.linkItem, styles.subNavItem)}
-                    to={project.path}
-                  >
-                    {project.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            <Link to="/work" className={stylex(styles.link)}>
+              <CaretRightIcon />
+              <HashIcon className={stylex(styles.hashIcon)} />
+              My Work
+            </Link>
           </li>
-
           <li className={stylex(styles.resetList)}>
-            <div className={stylex(styles.listItem)}>
-              <div>
-                <CaretRightIcon />
-                <HashIcon className={stylex(styles.hashIcon)} />
-                <Link className={stylex(styles.linkItem)} to="/designs">
-                  UI Designs
-                </Link>
-              </div>
-            </div>
+            <Link to="/designs" className={stylex(styles.link)}>
+              <CaretRightIcon />
+              <HashIcon className={stylex(styles.hashIcon)} />
+              UI Designs
+            </Link>
           </li>
-
           <li className={stylex(styles.resetList)}>
-            <div className={stylex(styles.listItem)}>
-              <div>
-                <CaretRightIcon />
-                <HashIcon className={stylex(styles.hashIcon)} />
-                <Link className={stylex(styles.linkItem)} to="/about">
-                  About Me
-                </Link>
-              </div>
-            </div>
+            <Link to="/about" className={stylex(styles.link)}>
+              <CaretRightIcon />
+              <HashIcon className={stylex(styles.hashIcon)} />
+              About Me
+            </Link>
           </li>
         </ol>
       </nav>

@@ -5,7 +5,7 @@ import Designs from "designs/Designs";
 import About from "about/About";
 import { Routes, Route } from "react-router-dom";
 import { useRef } from "react";
-import projects from "projects/projects";
+import projects from "work/projects";
 
 const styles = stylex.create({
   root: {
