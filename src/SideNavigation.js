@@ -129,6 +129,7 @@ export default function SideNavigation() {
               </div>
             </div>
           </li>
+
           <li className={stylex(styles.resetList)}>
             <div className={stylex(styles.listItem)}>
               <div>
@@ -143,7 +144,6 @@ export default function SideNavigation() {
                   <Link
                     className={stylex(styles.linkItem, styles.subNavItem)}
                     to={project.path}
-                    key={project.path}
                   >
                     {project.name}
                   </Link>
@@ -151,6 +151,7 @@ export default function SideNavigation() {
               </div>
             </div>
           </li>
+
           <li className={stylex(styles.resetList)}>
             <div className={stylex(styles.listItem)}>
               <div>
@@ -162,6 +163,7 @@ export default function SideNavigation() {
               </div>
             </div>
           </li>
+
           <li className={stylex(styles.resetList)}>
             <div className={stylex(styles.listItem)}>
               <div>
