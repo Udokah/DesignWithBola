@@ -2,8 +2,10 @@ import stylex from "@ladifire-opensource/stylex";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import MyDesignProcess from "home/MyDesignProcess";
-import CaseStudies from "home/CaseStudies";
+import CaseStudies from "case-studies/CaseStudies";
 import { forwardRef } from "react";
+import { Link } from "react-router-dom";
+import Designs from "designs/Designs";
 
 const styles = stylex.create({
   root: {
@@ -56,6 +58,9 @@ const styles = stylex.create({
     position: "relative",
     marginTop: 20,
   },
+  topLevelSection: {
+    marginTop: 80,
+  },
 });
 
 export default forwardRef(function Home({scrollToDesignProcess}, designProcess) {
@@ -77,7 +82,18 @@ export default forwardRef(function Home({scrollToDesignProcess}, designProcess) 
       <div ref={designProcess}>
         <MyDesignProcess />
       </div>
-      <CaseStudies />
+      <div className={stylex(styles.topLevelSection)}>
+        <CaseStudies doNotRenderAll={true} />
+        <div className="view-more">
+          <Link to='/case-studies' className="view-more__link">View more</Link>
+        </div>
+      </div>
+      <div className={stylex(styles.topLevelSection)}>
+        <Designs />
+        <div className="view-more">
+          <Link to='/designs' className="view-more__link">View more</Link>
+        </div>
+      </div>
     </div>
   );
 });

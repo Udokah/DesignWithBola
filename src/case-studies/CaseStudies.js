@@ -2,19 +2,19 @@ import stylex from "@ladifire-opensource/stylex";
 import rebelliousRecording from "videos/rebellious.webm";
 
 const styles = stylex.create({
-  caseStudies: {
-    marginTop: 80,
-  },
   caseStudiesWrapper: {
     marginTop: 40,
+    display: "flex",
+    flexDirection: "column",
+    gap: 70,
   },
   card: {
-    display: "inline-flex",
+    display: "flex",
     flexDirection: "row",
     gap: "3rem",
     width: "100%",
     maxWidth: 900,
-    marginBottom: 70,
+    margin: "auto",
     justifyContent: "space-between",
     textAlign: "left",
     "@media (max-width: 767.98px)": {
@@ -78,25 +78,68 @@ const styles = stylex.create({
   },
 });
 
-export default function CaseStudies() {
+export default function CaseStudies({renderAll}) {
+  const caseStudies = [
+    {
+      rightToLeft: false,
+      videoSrc: rebelliousRecording,
+      title: 'Rebellious Fashion',
+      subTitle: 'UX Design',
+      description: 'Solved user\'s pain points by redesigning Rebellious Fashion across desktop and mobile to ensure a compelling user journey.',
+    },
+    {
+      rightToLeft: true,
+      videoSrc: '',
+      title: 'Reconnect',
+      subTitle: 'UX Design',
+      description: 'Solved user\'s pain points by redesigning Rebellious Fashion across desktop and mobile to ensure a compelling user journey.',
+    },
+    {
+      rightToLeft: false,
+      videoSrc: '',
+      title: 'Extra 1',
+      subTitle: 'UX Design',
+      description: 'Solved user\'s pain points by redesigning Rebellious Fashion across desktop and mobile to ensure a compelling user journey.',
+    },
+    {
+      rightToLeft: true,
+      videoSrc: '',
+      title: 'Extra 2',
+      subTitle: 'UX Design',
+      description: 'Solved user\'s pain points by redesigning Rebellious Fashion across desktop and mobile to ensure a compelling user journey.',
+    },
+  ];
+
+  const getCaseStudiesToRender = () => {
+    const caseStudiesToRender = [];
+
+    for (let i = 0; i < caseStudies.length; i++) {
+      if (!renderAll && i === 2) {
+        break;
+      }
+
+      caseStudiesToRender.push(
+        <CaseStudyCard
+          key={`${caseStudies[i].title}-${i}`} // Append `-i` just in case `title` is the same
+          rightToLeft={caseStudies[i].rightToLeft}
+          videoSrc={caseStudies[i].videoSrc}
+          title={caseStudies[i].title}
+          subTitle={caseStudies[i].subTitle}
+          description={caseStudies[i].description}
+        />
+      );
+    }
+
+    return caseStudiesToRender;
+  };
+
   return (
-    <div className={stylex(styles.caseStudies)}>
+    <section>
       <h1 className="main-heading">Case Studies</h1>
       <div className={stylex(styles.caseStudiesWrapper)}>
-        <CaseStudyCard
-          videoSrc={rebelliousRecording}
-          title="Rebellious Fashion"
-          subTitle="UX Design"
-          description="Solved user's pain points by redesigning Rebellious Fashion across desktop and mobile to ensure a compelling user journey."
-        />
-        <CaseStudyCard
-          rightToLeft={true}
-          title="Reconnect"
-          subTitle="UX Design"
-          description="Solved user's pain points by redesigning Rebellious Fashion across desktop and mobile to ensure a compelling user journey."
-        />
+        {getCaseStudiesToRender()}
       </div>
-    </div>
+    </section>
   );
 }
 

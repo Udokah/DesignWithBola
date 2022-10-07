@@ -108,3 +108,12 @@ div[data-process-card]:hover [data-process-card-content] {
   right: 0;
   margin: auto;
 }
+
+.view-more {
+  display: block;
+  margin-top: 50px;
+}
+
+.view-more__link {
+  color: var(--dark-text);
+}

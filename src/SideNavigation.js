@@ -108,10 +108,10 @@ export default function SideNavigation() {
             </Link>
           </li>
           <li className={stylex(styles.resetList)}>
-            <Link to="/work" className={stylex(styles.link)}>
+            <Link to="/case-studies" className={stylex(styles.link)}>
               <CaretRightIcon />
               <HashIcon className={stylex(styles.hashIcon)} />
-              My Work
+              Case Studies
             </Link>
           </li>
           <li className={stylex(styles.resetList)}>

@@ -29,26 +29,53 @@ const styles = stylex.create({
   },
 });
 
-export default function Designs() {
+export default function Designs({renderAll}) {
+  const images = [
+    {
+      src: 'https://via.placeholder.com/500#1',
+      alt: ''
+    },
+    {
+      src: 'https://via.placeholder.com/500#2',
+      alt: ''
+    },
+    {
+      src: 'https://via.placeholder.com/500#3',
+      alt: ''
+    },
+    {
+      src: 'https://via.placeholder.com/500#4',
+      alt: ''
+    },
+    {
+      src: 'https://via.placeholder.com/500#5',
+      alt: ''
+    },
+  ];
+
+  const getImagesToRender = () => {
+    const imagesToRender = [];
+
+    for (let i = 0; i < images.length; i++) {
+      if (!renderAll && i === 2) {
+        break;
+      }
+
+      imagesToRender.push(
+        <li key={`${images[i].src}-${i}`} className={stylex(styles.galleryItem)}> {/* Append `-i` just in case `src` is the same */}
+          <img src={images[i].src} alt={images[i].alt} className={stylex(styles.galleryImg)} />
+        </li>
+      );
+    }
+
+    return imagesToRender;
+  };
+
   return (
     <section>
       <h1 className="main-heading">UI Designs</h1>
       <ul className={stylex(styles.gallery)}>
-        <li className={stylex(styles.galleryItem)}>
-          <img src="https://via.placeholder.com/500" alt="" className={stylex(styles.galleryImg)} />
-        </li>
-        <li className={stylex(styles.galleryItem)}>
-          <img src="https://via.placeholder.com/500" alt="" className={stylex(styles.galleryImg)} />
-        </li>
-        <li className={stylex(styles.galleryItem)}>
-          <img src="https://via.placeholder.com/500" alt="" className={stylex(styles.galleryImg)} />
-        </li>
-        <li className={stylex(styles.galleryItem)}>
-          <img src="https://via.placeholder.com/500" alt="" className={stylex(styles.galleryImg)} />
-        </li>
-        <li className={stylex(styles.galleryItem)}>
-          <img src="https://via.placeholder.com/500" alt="" className={stylex(styles.galleryImg)} />
-        </li>
+        {getImagesToRender()}
       </ul>
     </section>
   );

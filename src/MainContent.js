@@ -1,10 +1,10 @@
 import stylex from "@ladifire-opensource/stylex";
 import Home from "home/Home";
-import Work from "work/Work";
 import Designs from "designs/Designs";
 import About from "about/About";
 import { Routes, Route } from "react-router-dom";
 import { useRef } from "react";
+import CaseStudies from "case-studies/CaseStudies";
 
 const styles = stylex.create({
   root: {
@@ -30,8 +30,8 @@ export default function MainContent() {
     <div ref={main} className={stylex(styles.root)}>
       <Routes>
         <Route exact path="/" element={<Home ref={designProcess} scrollToDesignProcess={scrollToDesignProcess} />} />
-        <Route exact path="/work" element={<Work />} />
-        <Route exact path="/designs" element={<Designs />} />
+        <Route exact path="/case-studies" element={<CaseStudies renderAll={true} />} />
+        <Route exact path="/designs" element={<Designs renderAll={true} />} />
         <Route exact path="/about" element={<About />} />
       </Routes>
     </div>
